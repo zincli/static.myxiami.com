@@ -1,0 +1,58 @@
+.container {
+  width: 1170px \9;
+}
+ul,
+ol {
+  margin: 0;
+}
+.nav li {
+  _position: relative;
+  _display: block;
+}
+.nav li a {
+  _position: relative;
+  _display: block;
+  _padding: 10px 15px;
+  *zoom: 1;
+  _zoom: 1;
+}
+.nav li a:hover,
+.nav li a:focus {
+  _text-decoration: none;
+  _background-color: #eeeeee;
+}
+.nav li.disabled a {
+  _color: #999999;
+}
+.nav li.disabled a:hover,
+.nav li.disabled a:focus {
+  _color: #999999;
+  _text-decoration: none;
+  _background-color: transparent;
+  _cursor: not-allowed;
+}
+.nav-pills li {
+  _float: left;
+}
+.nav-pills li + li {
+  _margin-left: 2px;
+}
+.nav-pills li a {
+  _float: left;
+}
+.nav-pills li.active a,
+.nav-pills li.active a:hover,
+.nav-pills li.active a:focus {
+  _color: #ffffff;
+  _background-color: #428bca;
+}
+.nav-stacked li {
+  _float: none;
+}
+.nav-stacked li a {
+  _float: none;
+}
+.nav-stacked li + li {
+  _margin-top: 2px;
+  _margin-left: 0;
+}

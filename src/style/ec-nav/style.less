@@ -1,0 +1,38 @@
+@import "../lib/bootstrap/variables";
+@import "../lib/bootstrap/mixins";
+
+@grid-item-w: 1140px / 6;
+@grid-item-h: 115px;
+
+#ec_nav{
+  background-color: #FFFFFF;
+  padding: 40px 0;
+
+  .categories{
+    *zoom: 1;
+    margin-bottom: 15px;
+  }
+
+  .content{
+    height: @grid-item-h * 2;
+    overflow: hidden;
+  }
+
+  .grid{
+    .clearfix();
+    height: @grid-item-h * 2;
+    margin-bottom: 30px;
+
+    .grid-item{
+      .size(@grid-item-w, @grid-item-h);
+      float: left;
+      margin: 0 -1px -1px 0;
+
+      a{
+        display: block;
+        border: 1px solid #cccccc;
+        .size(100%, 100%);
+      }
+    }
+  }
+}
