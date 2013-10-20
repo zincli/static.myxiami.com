@@ -20,5 +20,7 @@ define(function(require){
         } else {
             $ec_nav.addClass('hidden');
         }
+
+        e.preventDefault();
     });
 });
