@@ -7298,15 +7298,44 @@ p {
 .article .article-body {
   margin-top: 10px;
 }
+.article .meta {
+  line-height: 1;
+  color: #888888;
+  font-size: 12px;
+}
 .article .show-box {
-  padding: 15px 25px;
   background-color: #ffffff;
   border-color: #ddd;
   border-width: 1px 0;
   border-style: solid;
+  color: #888888;
+  font-size: 12px;
 }
 .article .show-box img {
   background-color: #eeeeee;
+}
+.article .show-box .media-show {
+  margin: 15px 0 15px 25px;
+  float: left !important;
+  float: left;
+}
+.article .show-box .media-body {
+  padding: 15px 25px;
+}
+.article .show-box .promotion-flag {
+  height: 106px;
+  margin-bottom: 10px;
+  overflow: hidden;
+}
+.article .show-box .promotion-price {
+  float: left;
+  height: 34px;
+  line-height: 34px;
+  font-size: 28px;
+  color: #F70;
+}
+.article .show-box .actions {
+  float: right;
 }
 /* Actions Section */
 .actions .action {

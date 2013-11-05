@@ -13,6 +13,9 @@
 @main-border: 1px solid #ccc;
 @main-module-bg: #fcfcfc;
 
+@light-font-color: #888;
+@light-font-size: 12px;
+
 //Default
 html, body{background-color: #eee;}
 p{
@@ -74,15 +77,41 @@ p{
   .article-header, .article-body, .article-footer{margin: @padding-width}
   .article-header{margin-bottom: 10px;}
   .article-body{margin-top: 10px;}
+  .meta{line-height: 1;color: @light-font-color;font-size: @light-font-size}
 
   .show-box{
-    padding: 15px @padding-width;
     background-color: #ffffff;
     border-color: #ddd;
     border-width: 1px 0;
     border-style: solid;
+    color: @light-font-color;
+    font-size: @light-font-size;
 
     img{background-color: #eee}
+
+    .media-show{
+      margin: 15px 0 15px @padding-width;
+      .pull-left();
+    }
+    .media-body{
+      padding: 15px @padding-width;
+    }
+
+    .promotion-flag{
+      height: 106px;
+      margin-bottom: 10px;
+      overflow: hidden;
+    }
+    .promotion-price{
+      float: left;
+      height: 34px;
+      line-height: 34px;
+      font-size: 28px;
+      color: #F70;
+    }
+    .actions{
+      float: right;
+    }
   }
 }
 
