@@ -7,15 +7,26 @@
  */
 define(function (require){
     require('jquery.scrollTo');
-    require('../../style/ec-nav/style.css');
-    var template = require('text!../../templates/ec-nav/template.html');
 
+    var $trigger = $('#ec_nav_trigger');
     var $ec_nav = $('#ec_nav');
-
-    $ec_nav.html( template );
-
     var $content = $ec_nav.find('.content');
     var $nav = $ec_nav.find('.categories .nav');
+
+    $trigger.on('click', function(e){
+        var $this = $(this);
+
+        $this.toggleClass('active');
+
+        if( $this.hasClass('active') ){
+            $ec_nav.removeClass('hidden');
+        } else {
+            $ec_nav.addClass('hidden');
+        }
+
+        e.preventDefault();
+    });
+
 
     $ec_nav.on('click', '.categories .nav a', function ( e ){
         e.preventDefault();
@@ -31,7 +42,7 @@ define(function (require){
         $parent.addClass('active');
 
         window.setTimeout(function (){
-            $content.scrollTo( $this.data('content-id'), 600 );
+            $content.scrollTo( $this.data('content-id'), 300 );
         }, 15);
     });
 });

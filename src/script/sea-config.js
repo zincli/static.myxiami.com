@@ -6,7 +6,6 @@
  * To change this template use File | Settings | File Templates.
  */
 seajs.config({
-
     alias: {
         'jquery': 'jquery/1.10.2/jquery',
         'jquery.scrollTo': 'jquery-scroll-to/jquery.scrollTo'

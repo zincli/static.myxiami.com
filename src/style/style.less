@@ -5,22 +5,30 @@
 @import "lib/font-awesome/font-awesome";
 @import "lib/font-awesome/font-awesome-ie7";
 
-@title-size: 22px;
+@import "ec-nav/style";
+
+@title-size: 18px;
 @reading-line-height: 1.8;
 @section-margin: 20px;
 @section-margin-s: 8px;
+@app-header-height: 60px;
 
 @main-border: 1px solid #ccc;
 @main-module-bg: #fcfcfc;
 
+@dark-font-color: #666;
 @light-font-color: #888;
 @light-font-size: 12px;
 
+@category-nav-width: 120px;
+
 //Default
-html, body{background-color: #eee;}
+html, body{background-color: #fff;font-family: Verdana,Helvetica,Arial,sans-serif;}
 p{
   margin-top: 20px;
 }
+h1, h2, h3, h4, h5, h6{font-family: "MicroSoft Yahei", Verdana, sans-serif;}
+a:hover{text-decoration: none;}
 
 .app-head{background-color: #ccc}
 .app-nav{background-color: #aaa}
@@ -34,12 +42,43 @@ p{
 }
 
 /**
+ * Transitions
+ */
+a:hover{.transition(color 200ms linear);}
+
+/**
+ * Header
+ */
+.app-logo{
+  margin: 0;
+  height: @app-header-height;
+  line-height: @app-header-height;
+  letter-spacing: 4px;
+
+  a{color: @text-color}
+}
+.main-nav{
+  @main-nav-height: @app-header-height - 20px;
+  position: absolute;
+  margin: -@main-nav-height 0 0 @category-nav-width + @section-margin;
+
+  .nav a{
+    height: @main-nav-height;
+    line-height: @main-nav-height;
+    padding: 0;
+    margin-right: 15px;
+    color: @dark-font-color;
+  }
+  .nav a:hover, .nav .active a, .nav .active a:hover{background-color: transparent;color: darken(@dark-font-color, 30%);}
+}
+
+/**
  * Layout: 3 col
  */
 .layout-container{
   .clearfix();
 
-  @sidebar-width: 280px;
+  @sidebar-width: 300px;
   .primary{
     float: left;
     width: 100%;
@@ -47,7 +86,6 @@ p{
     & > .inner{margin-right: @sidebar-width}
     .inner{_margin-right: @sidebar-width}
 
-    @category-nav-width: 120px;
     .category-nav{
       float: left;
       width: @category-nav-width;
@@ -70,13 +108,13 @@ p{
   line-height: @reading-line-height;
   background-color: @main-module-bg;
   border: @main-border;
-  margin-bottom: 60px;
+  margin-bottom: @section-margin;
 
   @padding-width: 25px;
   h1 {font-size: @title-size}
-  .article-header, .article-body, .article-footer{margin: @padding-width}
-  .article-header{margin-bottom: 10px;}
-  .article-body{margin-top: 10px;}
+  .article-header{margin: 17px @padding-width 8px;}
+  .article-body{margin: 10px @padding-width @padding-width;}
+  .article-footer{margin: 6px @padding-width;}
   .meta{line-height: 1;color: @light-font-color;font-size: @light-font-size}
 
   .show-box{
@@ -173,6 +211,19 @@ p{
   margin-bottom: @section-margin;
 
   header, .widget-body, footer{margin: @section-margin-s;}
+}
+
+//Links
+.app-links{
+  ul{list-style: none;.clearfix();padding: 0;}
+  ul li{float: left;margin-right: 8px;}
+}
+
+//Pagination
+.pagination{
+  .page-btn{padding: 4px 8px;border: 1px solid transparent;margin-right: 4px;}
+  .page-btn:not(.current):hover{border-color: @link-hover-color;}
+  .page-btn.current{background-color: @link-color;color: #FFFFFF;}
 }
 
 

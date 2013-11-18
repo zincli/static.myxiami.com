@@ -20,12 +20,32 @@ module.exports = function(grunt) {
             }
         },
 
+        concat: {
+            options: {
+                paths: ''
+            },
+
+            build: {
+                options: {
+                    noncmd: true
+                },
+
+                files: {
+                    'dist/script/lib/seajs/2.1.1/sea.js': [
+                        'src/script/lib/seajs/2.1.1/sea.js',
+                        'src/script/lib/seajs/seajs-text/1.0.3/seajs-text.js',
+                        'src/script/sea-config.js'
+                    ]
+                }
+            }
+        },
+
         copy: {
             dev: {
                 files: [{
                     expand: true,
                     cwd: 'src/',
-                    src: ['script/**/*.js', 'style/font/**', 'templates/**'],
+                    src: ['script/**/*.js', 'style/font/**', 'style/ec-nav/logos/*', 'templates/**'],
                     dest: 'dist'
                 }]
             }
@@ -73,11 +93,12 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-less');
     grunt.loadNpmTasks('grunt-contrib-watch');
-    grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-copy');
+    grunt.loadNpmTasks('grunt-cmd-concat');
 
     // Default task(s).
-    grunt.registerTask('default', ['copy']);
     grunt.registerTask('style', ['less:dev']);
+    grunt.registerTask('js', ['copy:dev', 'concat:build']);
+    grunt.registerTask('default', ['style', 'js']);
 
 };
